@@ -6,7 +6,7 @@ score=n
 manifest-required-authors=KeDA Tech
 manifest-required-keys=license
 manifest-deprecated-keys=active
-valid-odoo-versions=16.0
+valid-odoo-versions=17.0
 
 [MESSAGES CONTROL]
 disable=all
