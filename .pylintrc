@@ -4,19 +4,12 @@ score=n
 
 [ODOOLINT]
 manifest-required-authors=KeDA Tech
-manifest-required-keys=license
+manifest-required-keys=
 manifest-deprecated-keys=active
 valid-odoo-versions=17.0
 
 [MESSAGES CONTROL]
 disable=all
-
-# This .pylintrc contains optional AND mandatory checks and is meant to be
-# loaded in an IDE to have it check everything, in the hope this will make
-# optional checks more visible to contributors who otherwise never look at a
-# green travis to see optional checks that failed.
-# .pylintrc-mandatory containing only mandatory checks is used the pre-commit
-# config as a blocking check.
 
 enable=anomalous-backslash-in-string,
     api-one-deprecated,
@@ -62,9 +55,9 @@ enable=anomalous-backslash-in-string,
     use-vim-comment,
     wrong-tabs-instead-of-spaces,
     xml-syntax-error,
-    # attribute-string-redundant,
+    attribute-string-redundant,
     character-not-valid-in-resource-link,
-    # consider-merging-classes-inherited,
+    consider-merging-classes-inherited,
     context-overridden,
     create-user-wo-reset-password,
     dangerous-filter-wo-user,
@@ -77,8 +70,8 @@ enable=anomalous-backslash-in-string,
     invalid-commit,
     manifest-maintainers-list,
     missing-newline-extrafiles,
-    # missing-readme,
-    # missing-return,
+    missing-readme,
+    missing-return,
     odoo-addons-relative-import,
     old-api7-method-defined,
     po-msgstr-variables,
@@ -88,7 +81,7 @@ enable=anomalous-backslash-in-string,
     str-format-used,
     test-folder-imported,
     translation-contains-variable,
-    # translation-positional-used,
+    translation-positional-used,
     unnecessary-utf8-coding-comment,
     website-manifest-key-not-valid-uri,
     xml-attribute-translatable,
