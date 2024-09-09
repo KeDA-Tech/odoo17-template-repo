@@ -56,3 +56,13 @@ repos:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: requirements-txt-fixer
+  - repo: https://github.com/OCA/pylint-odoo
+    rev: v8.0.19
+    hooks:
+      - id: pylint_odoo
+        args:
+          - --rcfile=.pylintrc
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
