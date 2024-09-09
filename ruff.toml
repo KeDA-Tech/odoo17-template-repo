@@ -1,0 +1,45 @@
+line-length = 88
+exclude = [".venv", ".external"]
+
+[format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
+
+[lint]
+select = [
+    "F",    # pyflakes
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+    "I",    # isort
+    "ERA",  # eradicate
+    "T20",  # print
+    "N",    # naming
+    "C90"   # mccabe
+]
+ignore = ["N806"]
+extend-safe-fixes = []
+extend-unsafe-fixes = []
+
+[lint.extend-per-file-ignores]
+"__init__.py" = ["F", "I"]
+"__manifest__.py" = ["B"]
+
+[lint.isort]
+combine-as-imports = true
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "odoo",
+    "odoo_addons",
+    "first-party",
+    "local-folder",
+]
+default-section = "third-party"
+known-local-folder = []
+
+[lint.isort.sections]
+odoo = ["odoo"]
+odoo_addons = ["odoo.addons"]

@@ -1,70 +1,9 @@
-[project]
-name = "odoo17-template-repo"
-dynamic = ["version"]
-
-[build-system]
-requires = [ "setuptools>=41", "wheel", "setuptools-git-versioning<2", ]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools-git-versioning]
-enabled = true
-version_file = "VERSION"
-count_commits_from_version_file = true
-dev_template = "{tag}.{branch}{ccount}"
-dirty_template = "{tag}.{branch}{ccount}"
-
-[tool.ruff]
-target-version = "py312"
-line-length = 88
-
-[tool.ruff.format]
-quote-style = "single"
-indent-style = "space"
-docstring-code-format = true
-
-[tool.ruff.lint]
-select = [
-    "F",    # pyflakes
-    "UP",   # pyupgrade
-    "B",    # flake8-bugbear
-    "SIM",  # flake8-simplify
-    "I",    # isort
-    "ERA",  # eradicate
-    "T20",  # print
-    "N",    # naming
-    "C90"   # mccabe
-]
-ignore = ["N806"]
-extend-safe-fixes = []
-extend-unsafe-fixes = []
-
-[tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F", "I"]
-"__manifest__.py" = ["B"]
-
-[tool.ruff.lint.isort]
-combine-as-imports = true
-section-order = [
-    "future",
-    "standard-library",
-    "third-party",
-    "odoo",
-    "odoo_addons",
-    "first-party",
-    "local-folder",
-]
-default-section = "third-party"
-known-local-folder = []
-
-[tool.ruff.lint.isort.sections]
-odoo = ["odoo"]
-odoo_addons = ["odoo.addons"]
-
 [tool.poetry]
+name = "odoo17-template-repo"
 package-mode = false
 version = "1.0.0"
 description = ""
-authors = []
+authors = ["KeDA Tech <developer@keda-tech.com>"]
 readme = "README.md"
 repository = "https://github.com/KeDA-Tech/odoo17-template-repo"
 
@@ -228,3 +167,52 @@ zeep = [
     {version = "4.1.0", markers = "python_version < '3.11'"},
     {version = "4.2.1", markers = "python_version >= '3.11'"}
 ]
+odoo = {url = "https://nightly.odoo.com/17.0/nightly/tgz/odoo_17.0.20240908.zip"}
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "F",    # pyflakes
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+    "I",    # isort
+    "ERA",  # eradicate
+    "T20",  # print
+    "N",    # naming
+    "C90"   # mccabe
+]
+ignore = ["N806"]
+extend-safe-fixes = []
+extend-unsafe-fixes = []
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F", "I"]
+"__manifest__.py" = ["B"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "odoo",
+    "odoo_addons",
+    "first-party",
+    "local-folder",
+]
+default-section = "third-party"
+known-local-folder = []
+
+[tool.ruff.lint.isort.sections]
+odoo = ["odoo"]
+odoo_addons = ["odoo.addons"]
